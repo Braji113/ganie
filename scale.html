@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>scaling.ganie.braji</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            background-color: #f4f4f4;
+
+        }
+        button{
+            height: 50px;
+            width: 120px;
+            padding: 10px;
+           background-color: forestgreen;
+            border: none;
+            border-radius: 10x;
+            box-shadow: black 10px 20px 20px;
+            color: aqua;
+           cursor: pointer;
+           font-size: 17px;
+          margin-left: 150px;
+        }
+           button:hover{
+            background-color: #f4f4f4;
+            color: seagreen;
+           }
+        
+        .landing{
+            height: auto;
+            width: 450px;
+            background-color: dodgerblue;
+            padding: 30px;
+            margin-top: 120px;
+            border-radius: 10px 10px 10px 10px ;
+             box-shadow: skyblue 20px 20px 20px 20px;
+             border-style: outset;
+        }
+        
+        h1{
+            font-style: italic;
+             margin-left: 10px;
+            color: white;
+            font-family: Arial, Helvetica, sans-serif;
+            } 
+            .img{
+                background-size: contain;
+            } 
+           p{
+             font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+             font-size: large;
+            
+           } 
+            
+           
+</style>
+</head>
+<body class="img" style="background-image: url(ysu.png);">
+    <div class="landing">
+        <h1>CHOOSE A SCALE PLS!!!.</h1>
+        <P>Please choose a scale base on your institution scaling system.</P>
+        5<input type="checkbox" name="checkbox" id="chka">
+        <br>
+        4<input type="checkbox" name="checkbox" id="chkb">
+        <br>
+        3<input type="checkbox" name="checkbox" id="chkc">
+        <br>
+        2<input type="checkbox" name="checkbox" id="chkd">
+        <br>
+        1<input type="checkbox" name="checkbox" id="chke">
+        <br>
+      
+        <p>is this your institution scaling system ?.</p>
+        
+        <button onclick="proceed()">yes proceed</button>
+          
+    </div>
+    <script>
+        function proceed(){
+            let chka = document.getElementById('chka').checked;
+            let chkb = document.getElementById('chkb').checked;
+            let chkc = document.getElementById('chkc').checked;
+            let chkd = document.getElementById('chkd').checked;
+            let chke = document.getElementById('chke').checked;
+            let checkcount = [chka, chkb, chkc, chkd, chke].filter(Boolean).length;
+
+            if(checkcount > 1){
+                alert("multiple check is not allow pls!!!.");
+            }
+            else if(chka){
+                window.location.href="prjct2.html";
+            }else if(chkb){
+                window.location.href="prjct3.html";
+            }else if(chkc){
+                window.location.href="prjct4.html";
+            }else if(chkd){
+                window.location.href="prjct5.html";
+            }else if(chke){
+                window.location.href="prjct6.html";
+            }else {
+                alert("choose scale to proceed pls!!!.");
+             }
+            
+            
+            
+
+                
+            
+         
+         
+         
+         
+        }
+
+    
+    </script>
+</body>
+</html>

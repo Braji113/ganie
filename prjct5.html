@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>the prgm.page.ganie.braji5</title>
+    <style>
+        
+        form{
+           
+            margin: auto;
+            width: 470px;
+            height: auto;
+          border: dimgray;
+          
+           padding-left: 10px;
+           border-radius: 20px;
+           margin-top: 20px;
+           background-color:  forestgreen;
+           box-shadow: forestgreen 20px 20px 20px 20px;          
+        }
+        .img{
+            background-size:contain;
+        }
+
+        .cc{
+            display: flex;
+            gap: 20px;
+           
+        }
+        .bb{
+            display: flex;
+            gap: 15px;
+        }
+        .bbex{
+         height: 80px;
+         width: 200px;
+         background-color: white;
+         margin-left: 30%;
+         color: black;
+         border: none;
+            }
+            .bbex:hover{
+                background-color: green;
+     
+                color: aliceblue;
+            }
+        .hh{
+            text-align: center;
+            color: whitesmoke;
+        }
+        .glass{
+            background-color: white;
+            border-radius: 20px;
+            padding: 10px;
+            backdrop-filter: blur(100px) saturate(300%);
+            width: 400px;
+          
+        }
+        label{
+            font-size: larger;
+            font-style: oblique;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: aliceblue;
+        }
+        input{
+          font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+           font-size: medium;
+            border-radius: 15%;
+        }
+        button{
+            font-size: large;
+            border-radius: 40px;
+            font-family: serif;
+            cursor: progress;
+            border-radius: 10x;
+            box-shadow: black 10px 20px 20px;
+          
+        }
+        button:hover{
+            background-color: white;
+            color: red;
+        }
+
+    </style>
+</head>
+<body class="img" style="background-image: url(ysu4.jpg);">
+    <form>
+        <br>
+        <br>
+        <h2 class="hh">RESULT PREDICTION SYSTEM</h2>
+
+        <div id="courses">
+            <div class="cc">
+                <div class="pc">
+                      <label for="point"> what grade are you expecting ?</label><br>
+                    <input type="text"class="pe" placeholder="eg A, B C...">
+                </div>
+                <br>
+                <br>
+                <div class="pc">
+                    <label for="point"> what is the course credit unit ?</label><br>
+                    <input type="number" class="cu"step="1"min="0" placeholder="eg 1,2,3,...">
+                </div>
+        
+            </div>
+        </div>
+        <br>
+        <br>
+    <div class="b">
+      <div class="bb">
+        <div class="bc">
+            <button type="button"onclick="addCourse()">Add another course</button>
+        </div>
+        <div class="bc">
+            <button type="button"onclick="calculateGPA()">What is  my GPA?</button>
+        </div>
+      </div>
+    </div>
+        <br>
+        <br>
+        <h2 class="glass">GPA : <span id="gpaResult">0.00</span></h2>
+        <h2 class="glass">TPE : <span id="tpeResult">00</span></h2>
+        <h2 class="glass">TCU : <span id="tcuResult">00</span></h2>
+         <br>
+         <br>
+         <button type="button" class="bbex" onclick="exitSystem()">leave/close window</button>
+        <br>
+        <br>
+
+        <marquee behavior="" direction="padding-left"></marquee>A.braji A.braji ngu.yb.ysu.ng.art.int..</marquee>
+        <br>
+        <br>
+    </form>
+    
+    <script>
+        const grade = {
+            'A':2.0,
+            'B':1.0,
+            'C':0.0,
+           
+        };
+
+        function addCourse(){
+            const babanDiv = document.getElementById('courses');
+            const sabonDiv = document.createElement('div');
+            sabonDiv.classList.add('cc');
+
+            sabonDiv.innerHTML = `
+            <div class="pc">
+                <label for="point"> what grade are you expecting ?</label><br>
+                      <input type="text"class="pe" placeholder="eg A,B,C...">
+                </div>
+                <br>
+                <div class="pc">
+                    <label for="point"> what is the course credit unit ?</label><br>
+                    <input type="number" class="cu"step="1"min="0" placeholder="eg 1,2,3...">
+                </div>
+        
+        `; 
+        babanDiv.appendChild(sabonDiv);
+    }
+
+   /*function calculateGPA(){
+    let exppoint = document.querySelectorAll('.pe');
+    let ccreditunit = document.querySelectorAll('.cu');
+
+    let totalpe = 0;
+    let ttcu = 0;
+
+    for(let i = 0; i < exppoint.length; i++){
+        const letter =  exppoint[i].value.toUpperCase().trim();
+        const hour = parseFloat(ccreditunit[i].value) || 0;
+        const gpa = grade[letter] || 0;
+
+        totalpe += gpa * hour;
+        ttcu += hour;
+    }
+
+    const gpaResult = ttcu > 0 ? (totalpe / ttcu).toFixed(2) : "error";
+    document.getElementById('gpaResult').textContent = gpaResult;
+   }
+    */
+   function calculateGPA(){
+    const tpe = document.querySelectorAll('.pe');
+    const tcu = document.querySelectorAll('.cu');
+
+    let ptearn = 0;
+    let creditearn = 0;
+
+    for (let i = 0; i < tpe.length; i++){
+        const lter = tpe[i].value.toUpperCase().trim();
+        const hours = parseFloat(tcu[i].value) || 0;
+        const gpa = grade[lter] || 0;
+
+        ptearn += gpa * hours;
+        creditearn += hours;
+        
+        const gpaResult = ptearn > 0 ? (ptearn / creditearn).toFixed(2) : check();
+        document.getElementById('gpaResult').textContent = gpaResult;
+         document.getElementById('tpeResult').textContent = ptearn;
+          document.getElementById('tcuResult').textContent =  creditearn;
+
+
+
+        
+    }
+
+   }
+   //function exitSystem() {
+   //         if (confirm('Bye see you next time!!. ')) {
+   //             window.open('', '_self', '');
+   //             window.close();
+   //         }
+   //     }
+   function exitSystem() {
+            if (confirm('Bye see you next time!!. ')) {
+               window.location.href = 'goo byu2.html';
+            }
+        }
+   function check(){
+    alert("invalid entered data pls!!!.");
+   }
+
+    
+
+
+
+    </script>
+</body>
