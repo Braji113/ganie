@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>i includeSpeachAlso</title>
+</head>
+<body>
+    <h2>Text-to-Speech Example</h2>
+    <button onclick="speakText()">Click to Speak</button>
+
+    <script>
+        function speakText() {
+            const text = "classrep;braji;braji yeah, akye chiki;iner justice;dawayo,madaki, anyi sabon software ah department,  mujeemuduba. seeler, chanaa;abubakar balle; muje maza-maza,, softwayar; tanakintachen sakamakoo,kafun yafuto??";
+            const speech = new SpeechSynthesisUtterance(text);
+            window.speechSynthesis.speak(speech);
+        }
+    </script>
+</body>
+</html>
