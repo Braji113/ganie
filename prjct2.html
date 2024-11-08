@@ -33,6 +33,20 @@
             display: flex;
             gap: 15px;
         }
+        .bbex{
+         height: 80px;
+         width: 200px;
+         background-color: white;
+         margin-left: 30%;
+         color: black;
+         border: none;
+            }
+            .bbex:hover{
+                background-color: green;
+     
+                color: aliceblue;
+            }
+
         .hh{
             text-align: center;
             color: whitesmoke;
@@ -74,6 +88,7 @@
 </head>
 <body class="img" style="background-image: url(ysu4.jpg);">
     <form>
+    <form action="post">
         <br>
         <br>
         <h2 class="hh">RESULT PREDICTION SYSTEM</h2>
@@ -112,6 +127,9 @@
         <h2 class="glass">TCU : <span id="tcuResult">00</span></h2>
          <br>
          <br>
+         <button type="button" class="bbex" onclick="exitSystem()">leave/close window</button>
+        <br>
+        <br>
 
         <marquee behavior="" direction="padding-left">A.braji A.braji ngu.yb.ysu.ng.art.int..</marquee>
         <br>
@@ -193,6 +211,17 @@
     }
 
    }
+   //function exitSystem() {
+   //         if (confirm('Bye see you next time!!. ')) {
+   //             window.open('', '_self', '');
+   //             window.close();
+   //         }
+   //     }
+        function exitSystem() {
+            if (confirm('Bye see you next time!!. ')) {
+               window.location.href = 'goo byu2.html';
+            }
+        }
    function check(){
     alert("invalid entered data pls!!");
    }
